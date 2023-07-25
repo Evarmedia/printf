@@ -10,16 +10,16 @@ int _printf(const char *format, ...){
 
   /* _printf("%s", 'Hello') */
   
-  for (i = 0; format[i] != '\0'; ){
+  for (index = 0; format[index] != '\0'; ){
     
     /* count the number of characters */
     /* print to the screen each character counted */
-    if (format[i] != '%'){
-      count += _putchar(format[i]);
-      i++;
+    if (format[index] != '%'){
+      count += _putchar(format[index]);
+      index++;
     }
-    else if (format[i] == '%' && format[i+1] !=' '){
-      switch (format[i + 1]){
+    else if (format[index] == '%' && format[index+1] !=' '){
+      switch (format[index + 1]){
         case 'c':
             /* print the character from the va_arguments */
             count += _putchar(va_arg(data, int));
@@ -47,7 +47,7 @@ int _printf(const char *format, ...){
             break;
       }
       
-      i += 2;
+      index += 2;
     }
     
     
